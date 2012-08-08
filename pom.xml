@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>testOrders.tests</groupId>
+  <artifactId>AutoShipAutoMaven</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>AutoShipAutoMaven</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <repositories>
+      <repository>
+        <id>releases</id>
+        <name>Releases</name>
+        <url>https://oss.sonatype.org/content/repositories/releases</url>
+      </repository>
+  </repositories>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.testng</groupId>
+      <artifactId>testng</artifactId>
+      <version>5.13.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+   <dependency>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium</artifactId>
+        <version>2.0b1</version>
+    </dependency>
+        
+    <dependency>
+       <groupId>org.seleniumhq.selenium</groupId>
+       <artifactId>selenium-firefox-driver</artifactId>
+       <version>2.22.0</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>org.seleniumhq.selenium</groupId>
+    	<artifactId>selenium-chrome-driver</artifactId>
+    	<version>2.5.0</version>
+	</dependency>
+	
+	<dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-ie-driver</artifactId>
+      <version>2.3.0</version>
+    </dependency>
+        
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+		
+		<dependency>
+        	<groupId>org.seleniumhq.webdriver</groupId>
+        	<artifactId>webdriver-common</artifactId>
+        	<version>0.9.7376</version>
+      	</dependency>
+      	
+      	<dependency>
+        	<groupId>org.seleniumhq.selenium</groupId>
+        	<artifactId>selenium-java</artifactId>
+        	<version>2.22.0</version>
+    	</dependency>  
+    	
+    	<dependency>
+        	<groupId>org.seleniumhq.selenium</groupId>
+        	<artifactId>selenium-server</artifactId>
+        	<version>2.22.0</version>
+    	</dependency>
+    	
+    	<dependency>
+        	<groupId>org.seleniumhq.selenium</groupId>
+        	<artifactId>selenium-api</artifactId>
+        	<version>2.22.0</version>
+      	</dependency>
+    	
+    	<dependency>
+      		<groupId>testOrders.tests.framework</groupId>
+      		<artifactId>framework</artifactId>
+      		<version>2.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+    	</dependency>
+    	
+    	<dependency>
+   			<groupId>org.seleniumhq.webdriver</groupId>
+   			<artifactId>webdriver-firefox</artifactId>
+   			<version>0.9.7376</version>
+		</dependency>
+  </dependencies>
+  
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>                            
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                            <skip>false</skip>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+           	<plugin>
+        		<groupId>org.apache.maven.plugins</groupId>
+        		<artifactId>maven-failsafe-plugin</artifactId>
+        		<version>2.12</version>
+        		<configuration>
+          			<suiteXmlFiles>
+            			<suiteXmlFile>testng.xml</suiteXmlFile>
+          			</suiteXmlFiles>
+        		</configuration>
+      		</plugin>
+        </plugins>
+    </build>
+  
+</project>
