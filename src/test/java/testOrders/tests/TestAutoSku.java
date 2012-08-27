@@ -47,11 +47,12 @@ public class TestAutoSku extends TestHelper{
 				new TestOrdersPage()
 				.takeInvoiceNumberAndCustomerId()
 				.openCustomerCardPage()
-				.takeCustomerCardScreenShoots()
 				.takeOrderNumber()
 				.shipOrder()
 				.returnToCustomerCardPage()
 				.isOrderShipped()
+				.takeCustomerCardScreenShoots()
+				.returnToCustomerCardPage()
 				.saveViewPackingPage(OfferOutlookPage.folderName);
 				
 				if (ItemDetailsPage.isAuto){
@@ -63,10 +64,11 @@ public class TestAutoSku extends TestHelper{
 						.returnToCustomerCardPage()
 						.takeAutoShipInvoiceNumber()
 						.takeOrderNumber()
-						.takeAutoshipScreenShoots()
 						.shipOrder()
 						.returnToNewCustomerCardPage()
 						.isOrderShipped()
+						.takeAutoshipScreenShoots()
+						.returnToNewCustomerCardPage()
 						.saveViewPackingPage(AutoShipCreatingPage.autoShipFolderName)
 						
 						;

@@ -13,7 +13,7 @@ public class AutoShipCreatingPage extends TestHelper{
 	public static String autoShipFolderName = new String();
 	
 	static Date date = new Date();
-	static SimpleDateFormat exactDateFormat = new SimpleDateFormat("HH-mm-ss-dd-MM-yyyy");
+	static SimpleDateFormat exactDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 	static String dateStr = exactDateFormat.format(date);
 	
 	public AutoShipCreatingPage(){
@@ -34,7 +34,7 @@ public class AutoShipCreatingPage extends TestHelper{
 		}
 		else{
 			Date date = new Date();
-			SimpleDateFormat exactDateFormat = new SimpleDateFormat("HH-mm-ss-dd-MM-yyyy");
+			SimpleDateFormat exactDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
 			takeScreenShotInFolder("Error_autoship_creating" + exactDateFormat.format(date), autoShipFolderName);
 			System.out.println("Getting autoship creating error! Look at screenshot in SKU folder");
 			return false;
@@ -52,9 +52,9 @@ public class AutoShipCreatingPage extends TestHelper{
 	
 	public AutoShipCreatingPage createAutoshipFolder(String SKU) {
 		wait(2);
-		autoShipFolderName = exactDateFormat.format(date) + "_" + "Autoship" + "_" + SKU;
+		autoShipFolderName = "TestResults/" + exactDateFormat.format(date) + "_" + "Autoship" + "_" + SKU;
 		File createdFolder = new File(autoShipFolderName);
-		createdFolder.mkdir();
+		createdFolder.mkdirs();
 		return this;
 	}
 	

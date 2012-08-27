@@ -31,9 +31,9 @@ public class ItemDetailsPage extends TestHelper{
 		SKU = getText(By.id("edititem"));
 		System.out.println("SKU " + SKU + " was entered");
 		wait(2);
-		folderName = exactDateFormat.format(date) + "_" + SKU;
+		folderName = "TestResults/" + exactDateFormat.format(date) + "_" + SKU;
 		File createdFolder = new File(folderName);
-		createdFolder.mkdir();
+		createdFolder.mkdirs();
 		
 		return this;
 	}

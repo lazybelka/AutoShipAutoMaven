@@ -39,10 +39,10 @@ public class OfferOutlookPage extends TestHelper{
 	
 	public OfferOutlookPage createSKUFolder(String SKU) {
 		Date date = new Date();
-		SimpleDateFormat exactDateFormat = new SimpleDateFormat("HH-mm-ss-dd-MM-yyyy");
-		folderName = exactDateFormat.format(date) + "_" + SKU;
+		SimpleDateFormat exactDateFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
+		folderName = "TestResults/" + exactDateFormat.format(date) + "_" + SKU;
 		File createdFolder = new File(folderName);
-		createdFolder.mkdir();
+		createdFolder.mkdirs();
 		
 		return this;
 	}

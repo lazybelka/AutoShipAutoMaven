@@ -32,7 +32,7 @@ public class CustomerCardPage extends TestHelper{
 	}
 
 	public CustomerCardPage isOrderShipped() {
-		wait(3);
+		wait(10);
 		waitFor(By.id("commentID"));
 		String orderStatus = new String();
 		waitFor(By.cssSelector("label[id*='infoSaleStatus']"));
@@ -146,6 +146,20 @@ public class CustomerCardPage extends TestHelper{
 		click(By.className("orderinfo_autoship"));
 		wait(4);
 		takeScreenShotInFolder("Autoship-" + "Auto_Ship-" + ItemDetailsPage.dateStr, AutoShipCreatingPage.autoShipFolderName);
+		return this;
+	}
+	
+	public CustomerCardPage returnToCustomerCardPage() {
+		wait(10);
+		open(customerCardPage + "order/" + TestOrdersPage.invoiceNumber);
+		
+		return this;
+	}
+	
+	public CustomerCardPage returnToNewCustomerCardPage() {
+		wait(10);
+		open(customerCardPage + "order/" + CustomerCardPage.autoShipInvoiceNumber);
+		
 		return this;
 	}
 

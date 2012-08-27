@@ -25,7 +25,7 @@ public class TestHelper extends Framework{
 	private final static String CardDefault = "4111111111111111";
 	protected final static String SkuDefault = "MST-BALM-25ML-30-C";
 	private final static String OfferOutlookPageDefault = "https://devtest.acmgaces.com/mattmin_zf/offers/preview/index/itemId/";
-	private final static String skuListPageDefault = "https://devtest.acmgaces.com/mattmin/accounting/itemTesting.php?page=reporting"; //  file:///C:/Users/ivbar/Desktop/acmg/SKUPage.htm 
+	private final static String skuListPageDefault = "https://devtest.acmgaces.com/mattmin/accounting/itemTesting.php?page=reporting"; // file:///C:/Users/ivbar/Desktop/acmg/SKUPage.htm
 	private final static String autoShipCreatingPageDefault = "https://devtest.acmgaces.com/busTestScripts/createAutoshipOrder.php?id=";
 	
 	public static String logInPage = LogInPageDefault;
@@ -47,7 +47,7 @@ public class TestHelper extends Framework{
 	public void getDriver(){
 		
 		ProfilesIni allProfiles = new ProfilesIni();
-		FirefoxProfile profile = allProfiles.getProfile("ACMG_auto");
+		FirefoxProfile profile = allProfiles.getProfile("autoShip_auto");
 		
 		driver = new FirefoxDriver(profile);
 		driver.get(TestHelper.logInPage);
